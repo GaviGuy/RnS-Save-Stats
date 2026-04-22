@@ -519,6 +519,7 @@ function processItems() {
             let hard = (vals["ItemDiscovery"][ITEMS[i].key] & 16) > 0;
             let lunar = (vals["ItemDiscovery"][ITEMS[i].key] & 32) > 0;
             let any = (vals["ItemDiscovery"][ITEMS[i].key] & 60) > 0;
+            if(any){
             itemsArray.push({
                 key: ITEMS[i].key,
                 name: ITEMS[i].name,
@@ -530,7 +531,7 @@ function processItems() {
                 hard: hard,
                 lunar: lunar,
                 any: any
-            });
+            });}
             if(seen) itemTotals[0]++;
             if(held) itemTotals[1]++;
             if(cute) itemTotals[2]++;
